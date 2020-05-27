@@ -1,0 +1,17 @@
+version: '3.7'
+
+services:
+  upsource:
+    build:
+      context: .
+      args:
+        - CERT_FILE=
+        - CERT_ALIAS=
+    ports:
+      - 8080:8080
+    volumes:
+      - ./data:/opt/upsource/data
+      - ./conf:/opt/upsource/conf
+      - ./logs:/opt/upsource/logs
+      - ./backups:/opt/upsource/backups
+      - ./cert:/tmp/cert
